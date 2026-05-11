@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-charcoal: #0e0e10;
+    --color-gold: #c9a35b;
+    --color-cream: #faf6ef;
+    --color-heart: #c8262c;
+    --color-muted: #4a4a4a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans), Inter, system-ui, -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    color: var(--color-charcoal);
+  }
+
+  ::selection {
+    background-color: rgba(201, 163, 91, 0.4);
+    color: var(--color-charcoal);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  a {
+    text-underline-offset: 3px;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-medium tracking-wide transition-all duration-200 focus-visible:outline-2 focus-visible:outline-gold;
+    min-height: 48px;
+  }
+
+  .btn-gold {
+    @apply btn bg-gold text-charcoal hover:bg-gold-500 shadow-soft;
+  }
+
+  .btn-gold-outline {
+    @apply btn border border-gold text-cream hover:bg-gold hover:text-charcoal;
+  }
+
+  .btn-charcoal {
+    @apply btn bg-charcoal text-cream hover:bg-charcoal/90;
+  }
+
+  .wordmark {
+    @apply font-serif uppercase tracking-wordmark;
+  }
+
+  .script {
+    font-family: var(--font-script), "Great Vibes", cursive;
+    font-weight: 400;
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.28em] text-gold-600;
+  }
+
+  .section-padding {
+    @apply py-20 sm:py-28;
+  }
+
+  .lead {
+    @apply text-lg sm:text-xl text-muted leading-relaxed;
+  }
+}
