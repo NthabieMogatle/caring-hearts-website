@@ -12,20 +12,17 @@ export const site = {
   emailHref: "mailto:maqubelaanelisa28@icloud.com",
   city: "Hartford, CT",
   address: "Hartford, Connecticut",
-  // PLACEHOLDER — replace with actual hours
   hours: [
-    { label: "Tours & Visits", value: "Mon–Sat, 9:00 AM – 6:00 PM" },
+    { label: "Tours & Visits — Weekdays", value: "Mon – Fri, 9:00 AM – 5:00 PM" },
+    { label: "Tours & Visits — Saturday", value: "Sat, 9:00 AM – 3:00 PM" },
     { label: "Resident Care", value: "24 hours a day, 7 days a week" },
-    { label: "Family Calls", value: "Anytime — we're always here" },
   ],
-  // PLACEHOLDER — replace with actual license number
-  license: "Licensed Assisted Living • Hartford, CT",
-  // PLACEHOLDER — replace social URLs when accounts are live
-  socials: [
-    { name: "Facebook", href: "#" },
-    { name: "Instagram", href: "#" },
-    { name: "LinkedIn", href: "#" },
-  ],
+  // Address line shown in the footer next to the copyright. The actual state
+  // license number can be added here once it's issued.
+  license: "Hartford, Connecticut",
+  // Add { name, href } entries here when social accounts go live — the footer
+  // hides the social row entirely while this list is empty.
+  socials: [] as { name: string; href: string }[],
 };
 
 export const nav = [

@@ -78,7 +78,7 @@ export function Footer() {
               <li>{site.address}</li>
             </ul>
 
-            <ul className="mt-6 flex items-center gap-3">
+            <ul className={`mt-6 flex items-center gap-3 ${site.socials.length === 0 ? "hidden" : ""}`}>
               {site.socials.map((s) => (
                 <li key={s.name}>
                   <a

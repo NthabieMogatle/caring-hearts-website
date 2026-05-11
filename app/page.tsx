@@ -6,7 +6,9 @@ import { Promises } from "@/components/sections/Promises";
 import { Services } from "@/components/sections/Services";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { Gallery } from "@/components/sections/Gallery";
-import { Testimonials } from "@/components/sections/Testimonials";
+// Testimonials section is intentionally omitted until real, attributed quotes
+// are collected. The component is kept in components/sections/Testimonials.tsx
+// and can be re-imported and dropped back into the page when ready.
 import { CTABand } from "@/components/sections/CTABand";
 import { Contact } from "@/components/sections/Contact";
 
@@ -21,7 +23,6 @@ export default function HomePage() {
         <Services />
         <WhyUs />
         <Gallery />
-        <Testimonials />
         <CTABand />
         <Contact />
       </main>
