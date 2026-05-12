@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { SafeImage } from "@/components/SafeImage";
 import { Ornament } from "@/components/Ornament";
 import { hero, site } from "@/lib/content";
 
@@ -26,7 +26,7 @@ export function Hero() {
         transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
         className="absolute inset-0 -z-20"
       >
-        <Image
+        <SafeImage
           src={hero.image}
           alt={hero.alt}
           fill

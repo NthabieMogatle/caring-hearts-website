@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { SafeImage } from "@/components/SafeImage";
 import { whyUs } from "@/lib/content";
 import { Ornament } from "@/components/Ornament";
 
@@ -18,7 +18,7 @@ export function WhyUs() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="relative aspect-[4/5] overflow-hidden rounded-[16px] shadow-soft ring-1 ring-charcoal/5"
           >
-            <Image
+            <SafeImage
               src={whyUs.image}
               alt={whyUs.imageAlt}
               fill

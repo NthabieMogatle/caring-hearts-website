@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { SafeImage } from "@/components/SafeImage";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Lightbox } from "@/components/Lightbox";
 import { gallery } from "@/lib/content";
@@ -42,7 +42,7 @@ export function Gallery() {
               }`}
               aria-label={`View larger: ${item.alt}`}
             >
-              <Image
+              <SafeImage
                 src={item.src}
                 alt={item.alt}
                 fill

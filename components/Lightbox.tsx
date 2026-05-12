@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { SafeImage } from "@/components/SafeImage";
 
 type GalleryItem = { src: string; alt: string };
 
@@ -98,7 +98,7 @@ export function Lightbox({ items, index, onClose, onNavigate }: LightboxProps) {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[14px]">
-              <Image
+              <SafeImage
                 src={items[index].src}
                 alt={items[index].alt}
                 fill

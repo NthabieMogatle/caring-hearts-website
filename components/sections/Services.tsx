@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { SafeImage } from "@/components/SafeImage";
 import { SectionHeader } from "@/components/SectionHeader";
 import { services } from "@/lib/content";
 
@@ -33,7 +33,7 @@ export function Services() {
                 }`}
               >
                 <div className="relative aspect-[5/4] overflow-hidden rounded-[16px] shadow-soft ring-1 ring-charcoal/5">
-                  <Image
+                  <SafeImage
                     src={s.image}
                     alt={s.alt}
                     fill

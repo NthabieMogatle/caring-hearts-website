@@ -34,11 +34,19 @@ export const nav = [
   { label: "Contact", href: "/contact" },
 ];
 
+// Unsplash CDN URL convention used throughout this file:
+//   https://images.unsplash.com/photo-<PHOTO_ID>?w=<WIDTH>&q=<QUALITY>&auto=format&fit=crop
+//
+// Always pin to a specific PHOTO_ID (the long alphanumeric in the URL). Never
+// use search-based or source.unsplash.com URLs — they can change without
+// notice. If a photo's source is ever taken down, next/image will load the
+// SafeImage fallback (soft tan/gold panel with the logo mark) automatically.
+
 export const hero = {
   // https://unsplash.com/photos/IBaVuZsJJTo — caregiver and elderly resident,
   // hands in close-up. Unsplash license: free for commercial use.
   image:
-    "https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=2400&q=85",
+    "https://images.unsplash.com/photo-1516307365426-bea591f05011?w=2400&q=85&auto=format&fit=crop",
   alt: "A caregiver gently holding the hand of an elderly resident",
   primary: { label: "Schedule a Visit", href: "/contact" },
   secondary: { label: `Call ${site.phone}`, href: site.phoneHref },
@@ -82,49 +90,54 @@ export const services = [
   {
     title: "Daily Living Assistance",
     body: "Gentle, dignified help with bathing, dressing, grooming, and mobility — always at the resident's pace.",
-    // https://unsplash.com/photos/IBaVuZsJJTo (caregiver with senior, hands)
+    // https://unsplash.com/photos/IBaVuZsJJTo — caregiver with senior, hands close-up
     image:
-      "https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1516307365426-bea591f05011?w=1600&q=80&auto=format&fit=crop",
     alt: "A caregiver gently holding the hand of an elderly resident",
   },
   {
     title: "Medication Management & Wellness Checks",
     body: "Daily medication oversight and proactive wellness monitoring by trained staff, with clear records shared with the family.",
-    // https://unsplash.com/photos/8manzosDSGM (elderly patient with caregiver)
+    // https://unsplash.com/photos/8manzosDSGM — elderly patient with caregiver
     image:
-      "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1600&q=80&auto=format&fit=crop",
     alt: "A caregiver assisting an elderly woman with medication",
   },
   {
     title: "Nutritious Home-Cooked Meals",
     body: "Three thoughtful meals a day plus snacks — fresh, balanced, and tailored to dietary needs and personal preferences.",
-    // https://unsplash.com/photos/dG_dT3PzjFw (seniors sharing a meal)
+    // Replaced 2026-05-12 (prior photo-1556909114 returned a broken image on
+    // the live site). New photo: Anna Pelzer's widely-used salad bowl — one of
+    // Unsplash's most-shared food photos. Fresh, nutritious, premium feel.
+    // https://unsplash.com/photos/IGfIGP5ONV0
     image:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1600&q=80",
-    alt: "A warm home-cooked meal prepared for residents",
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&q=80&auto=format&fit=crop",
+    alt: "A fresh, colorful home-cooked meal plated and ready to serve",
   },
   {
     title: "Companionship & Social Engagement",
     body: "Conversation, games, music, and shared activities that keep hearts and minds engaged every day.",
-    // https://unsplash.com/photos/N_aihp118p8 (companionship moment)
+    // Replaced 2026-05-12 (prior photo-1574610409625 returned a broken image
+    // on the live site). New photo: two seniors playing chess — captures
+    // shared activity and social connection. Widely-shared, stable.
     image:
-      "https://images.unsplash.com/photo-1574610409625-2f0fcaa19c6c?auto=format&fit=crop&w=1600&q=80",
-    alt: "Two elderly friends laughing together over tea",
+      "https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=1600&q=80&auto=format&fit=crop",
+    alt: "Two elderly residents enjoying a friendly chess game together",
   },
   {
     title: "24/7 Caregiver Support",
     body: "Trained, compassionate caregivers on-site around the clock — so help is always a moment away.",
-    // https://unsplash.com/photos/_3Q3tsJ01nc (caregiver and senior)
+    // https://unsplash.com/photos/_3Q3tsJ01nc — caregiver and senior
     image:
-      "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1600&q=80&auto=format&fit=crop",
     alt: "A caregiver smiling beside an elderly resident in a sunlit room",
   },
   {
     title: "Family Communication & Involvement",
     body: "Regular updates, open visiting, and an open door — because family is part of the care team.",
-    // https://unsplash.com/photos/szRY8w1zJBs (family with senior)
+    // https://unsplash.com/photos/szRY8w1zJBs — family with senior
     image:
-      "https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1600&q=80&auto=format&fit=crop",
     alt: "An adult daughter visiting her elderly mother",
   },
 ];
@@ -151,59 +164,53 @@ export const whyUs = {
       body: "Connected to local doctors, faith communities, and family networks — care that knows the neighborhood.",
     },
   ],
-  // https://unsplash.com/photos/2cdzDZ90M1k (caregiver assisting senior outside)
+  // https://unsplash.com/photos/2cdzDZ90M1k — caregiver assisting senior outside
   image:
-    "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?auto=format&fit=crop&w=1600&q=80",
+    "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=1600&q=80&auto=format&fit=crop",
   imageAlt:
     "A caregiver walking arm-in-arm with an elderly woman in a sunlit garden",
 };
 
 export const gallery = [
   {
-    // https://unsplash.com/photos/IBaVuZsJJTo
-    src: "https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.unsplash.com/photo-1516307365426-bea591f05011?w=1200&q=80&auto=format&fit=crop",
     alt: "A caregiver holding the hand of an elderly resident",
     aspect: "tall",
   },
   {
-    // https://unsplash.com/photos/szRY8w1zJBs
-    src: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200&q=80&auto=format&fit=crop",
     alt: "An adult daughter visiting her elderly mother",
     aspect: "wide",
   },
   {
-    // https://unsplash.com/photos/dG_dT3PzjFw
-    src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=80",
-    alt: "A warm home-cooked meal prepared for residents",
+    // Replaced 2026-05-12 — matches the new Service 03 meals image.
+    src: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=80&auto=format&fit=crop",
+    alt: "A fresh, colorful home-cooked meal plated and ready to serve",
     aspect: "square",
   },
   {
-    // https://unsplash.com/photos/2cdzDZ90M1k
-    src: "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=1200&q=80&auto=format&fit=crop",
     alt: "A caregiver walking with an elderly woman in a garden",
     aspect: "tall",
   },
   {
-    // https://unsplash.com/photos/N_aihp118p8
-    src: "https://images.unsplash.com/photo-1574610409625-2f0fcaa19c6c?auto=format&fit=crop&w=1400&q=80",
-    alt: "Two elderly friends laughing together over tea",
+    // Replaced 2026-05-12 — matches the new Service 04 companionship image.
+    src: "https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=1200&q=80&auto=format&fit=crop",
+    alt: "Two elderly residents enjoying a friendly chess game together",
     aspect: "wide",
   },
   {
-    // https://unsplash.com/photos/_3Q3tsJ01nc
-    src: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1200&q=80&auto=format&fit=crop",
     alt: "A caregiver smiling beside an elderly resident in a sunlit room",
     aspect: "square",
   },
   {
-    // https://unsplash.com/photos/8manzosDSGM
-    src: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1200&q=80&auto=format&fit=crop",
     alt: "A caregiver assisting an elderly woman with her medication",
     aspect: "tall",
   },
   {
-    // https://unsplash.com/photos/IqgT5_0KAGE (senior reading)
-    src: "https://images.unsplash.com/photo-1447710441604-5bdc41bc6517?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.unsplash.com/photo-1447710441604-5bdc41bc6517?w=1200&q=80&auto=format&fit=crop",
     alt: "An elderly resident reading peacefully by a window",
     aspect: "wide",
   },
